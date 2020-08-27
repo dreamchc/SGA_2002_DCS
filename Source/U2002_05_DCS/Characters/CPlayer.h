@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -11,19 +9,33 @@ class U2002_05_DCS_API ACPlayer : public ACharacter
 {
 	GENERATED_BODY()
 
+private:
+	UPROPERTY(EditAnywhere, Category = "Camera")
+		float HorizontalLookRate = 45;
+
+	UPROPERTY(EditAnywhere, Category = "Camera")
+		float VerticalLookRate = 45;
+
+private:
+	UPROPERTY(VisibleDefaultsOnly)
+		class USpringArmComponent* CameraBoom;
+
+	UPROPERTY(VisibleDefaultsOnly)
+		class UCameraComponent* FollowCamera;
+
 public:
-	// Sets default values for this character's properties
 	ACPlayer();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private:
+	void HorizontalLook(float Axis);
+	void VerticalLook(float Axis);
+	void MoveForward(float Axis);
+	void MoveRight(float Axis);
 };
