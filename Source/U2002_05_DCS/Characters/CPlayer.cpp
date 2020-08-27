@@ -6,6 +6,11 @@ ACPlayer::ACPlayer()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
+	bUseControllerRotationYaw = false;
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+	GetCharacterMovement()->RotationRate = FRotator(0, 540, 0);
+
+
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>("CameraBoom");
 	CameraBoom->SetupAttachment(GetCapsuleComponent());
 
