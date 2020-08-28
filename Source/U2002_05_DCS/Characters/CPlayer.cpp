@@ -25,12 +25,19 @@ ACPlayer::ACPlayer()
 	CameraBoom->bEnableCameraRotationLag = true;
 
 	FollowCamera->RelativeRotation = FRotator(-15, 0, 0);
+
+
+	StateManager = CreateDefaultSubobject<UCStateManagerComponent>("StateManager");
+	Equipment = CreateDefaultSubobject<UCEquipmentComponent>("Equipment");
+	
+	InputBuffer = CreateDefaultSubobject<UCInputBufferComponent>("InputBuffer");
 }
 
 void ACPlayer::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	InputBuffer->OnInputBufferConsumed.AddDynamic(this, &ACPlayer::OnInputBufferConsumed);
 }
 
 void ACPlayer::Tick(float DeltaTime)
@@ -48,6 +55,9 @@ void ACPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &ACPlayer::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ACPlayer::MoveRight);
+
+
+	PlayerInputComponent->BindAction("Attack", EInputEvent::IE_Pressed, this, &ACPlayer::Attack);
 }
 
 void ACPlayer::HorizontalLook(float Axis)
@@ -62,6 +72,8 @@ void ACPlayer::VerticalLook(float Axis)
 
 void ACPlayer::MoveForward(float Axis)
 {
+	CheckFalse(StateManager->IsAlive());
+
 	FRotator rotator = FRotator(0, GetControlRotation().Yaw, 0);
 	FVector direction = FQuat(rotator).GetForwardVector();
 
@@ -70,8 +82,35 @@ void ACPlayer::MoveForward(float Axis)
 
 void ACPlayer::MoveRight(float Axis)
 {
+	CheckFalse(StateManager->IsAlive());
+
 	FRotator rotator = FRotator(0, GetControlRotation().Yaw, 0);
 	FVector direction = FQuat(rotator).GetRightVector();
 
 	AddMovementInput(direction, Axis);
+}
+
+void ACPlayer::Attack()
+{
+	if (Equipment->GetInCombat() == false)
+	{
+		InputBuffer->UpdateKey(EInputBufferKey::ToggleCombat);
+
+		return;
+	}
+}
+
+void ACPlayer::OnInputBufferConsumed(EInputBufferKey Key)
+{
+	CheckFalse(StateManager->IsAlive());
+
+	switch (Key)
+	{
+		case EInputBufferKey::ToggleCombat: ToggleCombat(); break;
+	}
+}
+
+void ACPlayer::ToggleCombat()
+{
+
 }

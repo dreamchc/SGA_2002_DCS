@@ -2,6 +2,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/CStateManagerComponent.h"
+#include "Components/CEquipmentComponent.h"
+#include "Components/CInputBufferComponent.h"
 #include "CPlayer.generated.h"
 
 UCLASS()
@@ -23,6 +26,16 @@ private:
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCameraComponent* FollowCamera;
 
+	
+	UPROPERTY(VisibleDefaultsOnly)
+		class UCStateManagerComponent* StateManager;
+	
+	UPROPERTY(VisibleDefaultsOnly)
+		class UCEquipmentComponent* Equipment;
+
+	UPROPERTY(VisibleDefaultsOnly)
+		class UCInputBufferComponent* InputBuffer;
+
 public:
 	ACPlayer();
 
@@ -33,9 +46,19 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-private:
+private: //Bind Axis
 	void HorizontalLook(float Axis);
 	void VerticalLook(float Axis);
 	void MoveForward(float Axis);
 	void MoveRight(float Axis);
+
+private: //Bind Action
+	void Attack();
+
+private: //Delegated
+	UFUNCTION()
+		void OnInputBufferConsumed(EInputBufferKey Key);
+
+private: //InputBufferEvent
+	void ToggleCombat();
 };

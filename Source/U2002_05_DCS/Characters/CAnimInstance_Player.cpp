@@ -17,5 +17,5 @@ void UCAnimInstance_Player::NativeUpdateAnimation(float DeltaSeconds)
 
 	InAir = Player->GetCharacterMovement()->IsFalling();
 	Speed = Player->GetVelocity().Size2D();
-	Direction = CalculateDirection(Player->GetVelocity(), Player->GetControlRotation());
+	Direction = CalculateDirection(Player->GetVelocity(), Player->GetActorRotation());
 }
