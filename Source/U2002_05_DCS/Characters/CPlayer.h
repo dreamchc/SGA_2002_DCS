@@ -46,6 +46,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+public:
+	//class UAnimMontage* GetMontages
+
 private: //Bind Axis
 	void HorizontalLook(float Axis);
 	void VerticalLook(float Axis);
@@ -58,6 +61,9 @@ private: //Bind Action
 private: //Delegated
 	UFUNCTION()
 		void OnInputBufferConsumed(EInputBufferKey Key);
+
+	UFUNCTION()
+		void OnStateChagned(EState PrevState, EState NewState);
 
 private: //InputBufferEvent
 	void ToggleCombat();

@@ -38,6 +38,7 @@ void ACPlayer::BeginPlay()
 	Super::BeginPlay();
 	
 	InputBuffer->OnInputBufferConsumed.AddDynamic(this, &ACPlayer::OnInputBufferConsumed);
+	StateManager->OnStateChanged.AddDynamic(this, &ACPlayer::OnStateChagned);
 }
 
 void ACPlayer::Tick(float DeltaTime)
@@ -110,7 +111,22 @@ void ACPlayer::OnInputBufferConsumed(EInputBufferKey Key)
 	}
 }
 
+void ACPlayer::OnStateChagned(EState PrevState, EState NewState)
+{
+	//TODO
+	//Update Blocking
+	//Update Zoom
+	//Update Rotation Setting
+	//Abillity on State Changed
+
+	//Reset Melee Attack type when Attack state ends
+	//Archery - Drawing Sound
+}
+
 void ACPlayer::ToggleCombat()
 {
+	CheckFalse(StateManager->IsStateEqualPure(EState::Idle));
+
+	StateManager->SetState(EState::Interacting);
 
 }

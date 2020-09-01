@@ -34,6 +34,8 @@ public:
 	bool IsStateEqualPure(EState State);
 	bool IsAlive();
 
+	void SetState(EState NewState);
+
 public:
 	UPROPERTY(BlueprintAssignable, VisibleDefaultsOnly, BlueprintCallable)
 		FStateChanged OnStateChanged;
@@ -43,5 +45,5 @@ public:
 
 private:
 	EState CurrentState;
-	
+	FTimerHandle IdleStateTimer;
 };
