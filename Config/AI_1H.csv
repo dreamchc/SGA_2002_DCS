@@ -1,0 +1,11 @@
+,Action,Montages
+LightAttack,1,/Game/Characters/Montages/AI/ExampleAI/AM_AI_LightAttack_01.AM_AI_LightAttack_01
+DisarmWeapon,11,/Game/Characters/Montages/AI/ExampleAI/AM_AI_DisarmSword.AM_AI_DisarmSword
+StunFront,12,/Game/Characters/Montages/AI/ExampleAI/AM_AI_StunFront.AM_AI_StunFront
+HeavyAttack,2,/Game/Characters/Montages/AI/ExampleAI/AM_AI_HeavyAttack_01.AM_AI_HeavyAttack_01
+Block,17,/Game/Characters/Montages/AI/ExampleAI/AM_AI_BlockShield.AM_AI_BlockShield
+Impact,16,/Game/Characters/Montages/AI/ExampleAI/AM_AI_Impact.AM_AI_Impact
+SpecialAttack,4,/Game/Characters/Montages/AI/ExampleAI/AM_AI_SpecialAttack_01.AM_AI_SpecialAttack_01
+Parried,19,/Game/Characters/Montages/AI/ExampleAI/AM_AI_Parried.AM_AI_Parried
+Backstabbed,20,/Game/Characters/Montages/Player/Common/M_Backstabbed.M_Backstabbed
+DrawWeapon,10,/Game/Characters/Montages/AI/ExampleAI/AM_AI_DrawSword.AM_AI_DrawSword

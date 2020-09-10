@@ -1,0 +1,12 @@
+,Action,Montages
+LightAttack,1,/Game/Characters/Montages/Player/UnarmedCombat/M_UC_Attack_01.M_UC_Attack_01
+HeavyAttack,2,/Game/Characters/Montages/Player/UnarmedCombat/M_UC_HeavyAttack.M_UC_HeavyAttack
+StunFront,12,/Game/Characters/Montages/Player/UnarmedCombat/M_UC_StunFront.M_UC_StunFront
+StunLeft,15,/Game/Characters/Montages/Player/UnarmedCombat/M_UC_StunLeft.M_UC_StunLeft
+Block,17,/Game/Characters/Montages/Player/UnarmedCombat/M_UC_Block.M_UC_Block
+StunRight,14,/Game/Characters/Montages/Player/UnarmedCombat/M_UC_StunRight.M_UC_StunRight
+FallingAttack,5,/Game/Characters/Montages/Player/UnarmedCombat/M_UC_FallingAttack.M_UC_FallingAttack
+Parry,18,/Game/Characters/Montages/Player/OneHand/M_1HS_Parry.M_1HS_Parry
+Parried,19,/Game/Characters/Montages/Player/Common/M_Parried.M_Parried
+Impact,16,/Game/Characters/Montages/Player/Common/M_Impact.M_Impact
+StunBack,13,/Game/Characters/Montages/Player/UnarmedCombat/M_UC_StunBack.M_UC_StunBack

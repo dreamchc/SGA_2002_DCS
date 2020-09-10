@@ -1,0 +1,7 @@
+,Action,Montages
+DisarmWeapon,11,/Game/Characters/Montages/Player/Magic/M_MG_DisarmSpell.M_MG_DisarmSpell
+DrawWeapon,10,/Game/Characters/Montages/Player/Magic/M_MG_DrawSpell.M_MG_DrawSpell
+StunFront,12,/Game/Characters/Montages/Player/Magic/M_MG_StunFront.M_MG_StunFront
+StunBack,13,/Game/Characters/Montages/Player/Magic/M_MG_StunBack.M_MG_StunBack
+StunRight,14,/Game/Characters/Montages/Player/Magic/M_MG_StunRight.M_MG_StunRight
+StunLeft,15,/Game/Characters/Montages/Player/Magic/M_MG_StunLeft.M_MG_StunLeft

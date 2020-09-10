@@ -1,0 +1,5 @@
+LightAttack,1,/Game/DynamicCombatSystem/Montages/AI/SummonedMinion/M_AI_AttackA.M_AI_AttackA
+StunFront,12,/Game/DynamicCombatSystem/Montages/AI/SummonedMinion/M_AI_StunFront.M_AI_StunFront
+StunBack,13,/Game/DynamicCombatSystem/Montages/AI/SummonedMinion/M_AI_StunBack.M_AI_StunBack
+StunLeft,15,/Game/DynamicCombatSystem/Montages/AI/SummonedMinion/M_AI_StunLeft.M_AI_StunLeft
+StunRight,14,/Game/DynamicCombatSystem/Montages/AI/SummonedMinion/M_AI_StunRight.M_AI_StunRight

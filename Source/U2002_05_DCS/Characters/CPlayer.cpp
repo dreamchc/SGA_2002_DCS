@@ -31,6 +31,8 @@ ACPlayer::ACPlayer()
 	Equipment = CreateDefaultSubobject<UCEquipmentComponent>("Equipment");
 	
 	InputBuffer = CreateDefaultSubobject<UCInputBufferComponent>("InputBuffer");
+
+	MontageManager = CreateDefaultSubobject<UCMontageManagerComponent>("MontageManager");
 }
 
 void ACPlayer::BeginPlay()
@@ -39,6 +41,9 @@ void ACPlayer::BeginPlay()
 	
 	InputBuffer->OnInputBufferConsumed.AddDynamic(this, &ACPlayer::OnInputBufferConsumed);
 	StateManager->OnStateChanged.AddDynamic(this, &ACPlayer::OnStateChagned);
+
+
+	Equipment->Initialize();
 }
 
 void ACPlayer::Tick(float DeltaTime)
@@ -99,6 +104,17 @@ void ACPlayer::Attack()
 
 		return;
 	}
+
+	if (Equipment->GetCombatType() == ECombatType::Melee)
+	{
+
+	}
+	else
+	{
+		CheckFalse(Equipment->GetCombatType() == ECombatType::Unarmed);
+
+		InputBuffer->UpdateKey(EInputBufferKey::LightAttack);
+	}
 }
 
 void ACPlayer::OnInputBufferConsumed(EInputBufferKey Key)
@@ -129,4 +145,28 @@ void ACPlayer::ToggleCombat()
 
 	StateManager->SetState(EState::Interacting);
 
+	EMontageAction action = Equipment->GetInCombat() ? EMontageAction::DisarmWeapon : EMontageAction::DrawWeapon;
+	UAnimMontage* montage = MontageManager->GetMontageForAction(action, 0);
+
+	checkf(montage != NULL, L"montage != NULL");
+	
+	PlayAnimMontage(montage);
+}
+
+bool ACPlayer::AttemptBackstab()
+{
+	CheckFalseResult(Equipment->CanMeleeAttack(StateManager), false);
+
+	FVector start = GetActorLocation();
+	FVector end = start + GetActorForwardVector() * 150;
+
+	FHitResult result;
+	TArray<AActor *> ignoreActors;
+	UKismetSystemLibrary::LineTraceSingle
+	(
+		GetWorld(), start, end, ETraceTypeQuery::TraceTypeQuery1, false, ignoreActors,
+		EDrawDebugTrace::None, result, true
+	);
+
+	return false;
 }

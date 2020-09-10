@@ -1,0 +1,8 @@
+,Action,Montages
+ShootArrow,22,/Game/Characters/Montages/Player/Archery/M_ShootArrowAndDrawNew.M_ShootArrowAndDrawNew
+StunLeft,15,/Game/Characters/Montages/Player/Archery/M_AR_StunLeft.M_AR_StunLeft
+DisarmWeapon,11,/Game/Characters/Montages/Player/Archery/M_AR_DisarmBow.M_AR_DisarmBow
+DrawWeapon,10,/Game/Characters/Montages/Player/Archery/M_AR_DrawBow.M_AR_DrawBow
+StunFront,12,/Game/Characters/Montages/Player/Archery/M_AR_StunFront.M_AR_StunFront
+StunBack,13,/Game/Characters/Montages/Player/Archery/M_AR_StunBack.M_AR_StunBack
+StunRight,14,/Game/Characters/Montages/Player/Archery/M_AR_StunRight.M_AR_StunRight

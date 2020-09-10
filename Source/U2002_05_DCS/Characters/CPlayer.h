@@ -5,6 +5,7 @@
 #include "Components/CStateManagerComponent.h"
 #include "Components/CEquipmentComponent.h"
 #include "Components/CInputBufferComponent.h"
+#include "Components/CMontageManagerComponent.h"
 #include "CPlayer.generated.h"
 
 UCLASS()
@@ -35,6 +36,13 @@ private:
 
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCInputBufferComponent* InputBuffer;
+
+	UPROPERTY(VisibleDefaultsOnly)
+		class UCMontageManagerComponent* MontageManager;
+
+public: //Component Return
+	FORCEINLINE class UCEquipmentComponent* GetEquipment() { return Equipment; }
+
 
 public:
 	ACPlayer();
@@ -67,4 +75,7 @@ private: //Delegated
 
 private: //InputBufferEvent
 	void ToggleCombat();
+
+private:
+	bool AttemptBackstab();
 };

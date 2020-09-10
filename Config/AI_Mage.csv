@@ -1,0 +1,7 @@
+,Action,Montages
+DisarmWeapon,11,/Game/Characters/Montages/AI/Magic/M_AI_DisarmSpell.M_AI_DisarmSpell
+DrawWeapon,10,/Game/Characters/Montages/AI/Magic/M_AI_DrawSpell.M_AI_DrawSpell
+StunFront,12,/Game/Characters/Montages/AI/Magic/M_AI_StunFront.M_AI_StunFront
+StunBack,13,/Game/Characters/Montages/AI/Magic/M_AI_StunBack.M_AI_StunBack
+StunRight,14,/Game/Characters/Montages/AI/Magic/M_AI_StunRight.M_AI_StunRight
+StunLeft,15,/Game/Characters/Montages/AI/Magic/M_AI_StunLeft.M_AI_StunLeft

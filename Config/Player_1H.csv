@@ -1,0 +1,14 @@
+,Action,Montages
+LightAttack,1,/Game/Characters/Montages/Player/OneHand/M_1H_LightAttack_02.M_1H_LightAttack_02
+HeavyAttack,2,/Game/Characters/Montages/Player/OneHand/M_1H_HeavyAttack_02.M_1H_HeavyAttack_02
+Backstab,21,/Game/Characters/Montages/Player/Common/M_Backstab.M_Backstab
+ThrustAttack,3,/Game/Characters/Montages/Player/OneHand/M_1H_ThrustAttack.M_1H_ThrustAttack
+Parried,19,/Game/Characters/Montages/Player/Common/M_Parried.M_Parried
+Block,17,/Game/Characters/Montages/Player/OneHand/M_1H_Block.M_1H_Block
+FallingAttack,5,/Game/Characters/Montages/Player/OneHand/M_1H_FallingAttack.M_1H_FallingAttack
+SpecialAttack,4,/Game/Characters/Montages/Player/OneHand/M_1H_SpecialAttack.M_1H_SpecialAttack
+Impact,16,/Game/Characters/Montages/Player/Common/M_Impact.M_Impact
+DrawWeapon,10,/Game/Characters/Montages/Player/OneHand/M_1H_DrawSword.M_1H_DrawSword
+DisarmWeapon,11,/Game/Characters/Montages/Player/OneHand/M_1H_DisarmSword.M_1H_DisarmSword
+StunFront,12,/Game/Characters/Montages/Player/OneHand/M_1H_StunFront.M_1H_StunFront
+Parry,18,/Game/Characters/Montages/Player/OneHand/M_1H_Parry.M_1H_Parry
